@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <div class="center">
+    <h1>Register</h1> 
+        <form action="/register" method="POST">
+          <div class="txt_field">
+             <input type="text" name="user_name" id="_rname" class="form-control" placeholder="Name" value="<%= (locals.old_data) ? old_data.user_name : ''; %>" required>
+             <span></span>
+             <label>Name</label>
+            </div>
+                <div class="txt_field">
+                  <input type="email" name="user_email" id="_remail" class="form-control" placeholder="Email" value="<%= (locals.old_data) ? old_data.user_email : ''; %>" required>
+                  <span></span>
+                  <label>Email</label>
+                </div>
+                <div class="txt_field">
+                  <input type="password" name="user_pass" id="_rpass" class="form-control" placeholder="Password" required>
+                  <span></span>
+                  <label>Password</label>
+                  <% if (locals.login_errors) { 
+                    login_errors.forEach(function(error_msg){ %>
+                    <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+                  <% });
+                  } %> 
+                </div>
+                <% if (locals.register_error) { 
+                  register_error.forEach(function(error_msg){ %>
+                  <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+                <% });
+                } %>
+                <input type="submit" value="Sign up">
+                <div class="signup_link">
+                  Tell 0123456789 <a href=""></a>
+            </form>
+    </div>
+    </div>
+</body>
+</html>

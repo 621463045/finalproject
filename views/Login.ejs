@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animated Login Form | CodingNepal</title>
+    <link rel="stylesheet" href="style.css"> 
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" name="user_email" id="_email" placeholder="Email" required>
+          <span></span>
+          <label>Email</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" name="user_pass" id="_pass" class="form-control" placeholder="Password" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <% if (locals.login_errors) { 
+          login_errors.forEach(function(error_msg){ %>
+          <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+          <span></span>
+        <% });
+        } %>  
+        <input type="submit" value="Login">
+        <div class="signup_link">
+          Not a member? <a href="/Register">Signup</a>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
