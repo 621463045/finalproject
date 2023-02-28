@@ -20,14 +20,13 @@
     <div class="container p-5">
         <div class="row">
             <div class=" bg-light rounded border">
-        <h1 class="mt-2 mb-3 text-uppercase "> EDIT</h1>
+        <h1 class="mt-2 mb-3 text-uppercase ">EDIT</h1>
 
         <form action="/adminAction/edit/<%= data.id %>" method="post" novalidate>
           <div class="form-group mb-2 col-sm-12 ">
               <label for="_eid">ID</label>
               <input type="text" name="id" id="_eid" class="form-control" placeholder=""
                   value="<%= data.id %>" autocomplete="off" readonly>
-              <label for="_ename">Name</label>
           </div>
           <div class="form-group mb-2 col-sm-12 ">
               <label for="_rname">Name</label>
@@ -52,7 +51,6 @@
                   <button type="submit" class="btn btn-outline-success mt-3 mb-3">เเก้ไข</button>
                   <a href="/admin" class="btn btn-outline-secondary mb-2 mt-2">ย้อนกลับ</a>
       </form>
-
             </div>
         </div>
     </div>

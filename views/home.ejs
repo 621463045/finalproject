@@ -15,9 +15,6 @@
 
     <!-- Boxicons CSS -->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
-    
-    
-
   </head>
   <body>
     <nav>
@@ -61,9 +58,7 @@
         </div>
       </div>
     </nav>
-
     <section class="overlay"></section>
-
     <script>
       const navBar = document.querySelector("nav"),
         menuBtns = document.querySelectorAll(".menu-icon"),
@@ -74,7 +69,6 @@
           navBar.classList.toggle("open");
         });
       });
-
       overlay.addEventListener("click", () => {
         navBar.classList.remove("open");
       });

@@ -42,8 +42,6 @@ io.on("connection", (socket) => {
     });
 });
 
-
-
 app.use("/peerjs", ExpressPeerServer(server, opinions));
 app.use(express.static("public"));
 
@@ -94,7 +92,6 @@ app.get('/', ifNotLoggedin, (req,res,next) => {
         );
     });
 });// END OF ROOT PAGE
-
 
 // REGISTER PAGE
 app.post('/register', ifLoggedin, 
@@ -149,7 +146,6 @@ app.post('/register', ifLoggedin,
     }
 });// END OF REGISTER PAGE
 
-
 // LOGIN PAGE
 app.post('/', ifLoggedin, [
     body('user_email').custom((value) => {
@@ -187,8 +183,6 @@ app.post('/', ifLoggedin, [
             .catch(err => {
                 if (err) throw err;
             });
-
-
         }).catch(err => {
             if (err) throw err;
         });
@@ -204,12 +198,6 @@ app.post('/', ifLoggedin, [
     }
 });
 // END OF LOGIN PAGE
-
-
-
-// app.use('/', (req,res) => {
-//     res.status(404).send('<h1>404 Page Not Found!</h1>');
-// });
 app.get("/Register", (req,res,next) => {
         res.render('Register');
   });
@@ -274,7 +262,6 @@ app.get("/admin",  ifNotLoggedin,(req,res,next) => {
     });
   });
  
-  
   app.post('/adminAction/edit/(:id)', 
 // post data validation(using express-validator)
 [
@@ -324,13 +311,13 @@ app.get("/admin",  ifNotLoggedin,(req,res,next) => {
             res.redirect('/admin');
         }); 
         });
-    
 
     // LOGOUT
 app.get('/logout',(req,res)=>{
     //session destroy
     req.session = null;
     res.redirect('/');
+    
 });
 // END OF LOGOUT    
 server.listen(process.env.PORT || 3000, () => console.log("Server is Running..."));

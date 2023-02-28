@@ -22,7 +22,7 @@ showChat.addEventListener("click", () => {
 และหน้า .main__left  ให้ display = none และ .header__back ห้ display = block*/
 
 
-const user =  " <%= name %>"; /*กำหนดตัวแปร user ให้ใส่ชื่อเพื่อเข้าร่วม webcam */
+const user = prompt("Enter your name"); /*กำหนดตัวแปร user ให้ใส่ชื่อเพื่อเข้าร่วม webcam */
 
 var peer = new Peer({
   host: '127.0.0.1',
@@ -44,14 +44,8 @@ var peer = new Peer({
         username: 'openrelayproject',
         credentials: 'openrelayproject'
       }
-      // {
-      //   url: 'turn:192.158.29.39:3478?transport=tcp',
-      //   credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-      //   username: '28224511:1379330808'
-      // }
     ]
   },
-
   debug: 3
 });
 
